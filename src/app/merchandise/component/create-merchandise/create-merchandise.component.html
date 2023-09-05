@@ -1,0 +1,25 @@
+<p-card header="Crea una mercancía">
+    <form (ngSubmit)="createUser()">
+      <input
+        placeholder="Ingresa el nombre"
+        type="text"
+        pInputText
+        [(ngModel)]="productName"
+        name="productName"
+      />
+      <input
+        placeholder="Ingresa la cantidad"
+        type="int"
+        pInputText
+        [(ngModel)]="quantity"
+        name="quantity"
+      />
+      <p-dropdown
+        [options]="users"
+        [(ngModel)]="selectedUser"
+        optionLabel="userName"
+        name="userName"
+      ></p-dropdown>
+      <button pButton class="p-button-success" >Enviar</button>
+    </form>
+  </p-card>

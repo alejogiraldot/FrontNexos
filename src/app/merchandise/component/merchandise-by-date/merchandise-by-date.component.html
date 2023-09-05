@@ -1,0 +1,25 @@
+<form (ngSubmit)="searchMerchandise()">
+  <div class="p-input-icon-left">
+    <i class="pi pi-search"></i>
+    <input
+      pInputText
+      [(ngModel)]="searchValue"
+      name="searchValue"
+      placeholder="Valor de búsqueda"
+    />
+  </div>
+  <button pButton class="p-button-success">Enviar</button>
+</form>
+
+<div *ngFor="let merch of merchandiseList">
+  <p-card
+    [header]="merch.productName"
+    [subheader]="'Fecha de admisión ' + merch.admissionDate"
+    [style]="{ width: '360px' }"
+  >
+    <p><b>Usuario que Registró: </b> {{ merch.userWhoRegisters }}</p>
+    <ng-template pTemplate="footer">
+    
+    </ng-template>
+  </p-card>
+</div>

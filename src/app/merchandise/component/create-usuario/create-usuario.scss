@@ -1,0 +1,18 @@
+.custom-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .custom-select option {
+    font-size: 16px;
+  }
+  
+  .custom-select:focus {
+    border-color: #007bff;
+  }

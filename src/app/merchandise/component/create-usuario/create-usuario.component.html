@@ -1,0 +1,27 @@
+<div>
+    <p-card header="Crea un usuario">
+      <form (ngSubmit)="createUser()">
+        <input
+          placeholder="Ingresa el nombre"
+          type="text"
+          pInputText
+          [(ngModel)]="newUser.userName"
+          name="userName"
+        />
+        <input
+          placeholder="Ingresa la edad"
+          type="number"
+          pInputText
+          [(ngModel)]="newUser.age"
+          name="age"
+        />
+    
+        <select id="userType" [(ngModel)]="newUser.userType" name="userType" required class="custom-select" style="border-radius: 5px; padding: 13px; width: 210px; margin-right: 5px;">
+            <option value="administrador">Asesor de ventas</option>
+            <option value="Usuario">administrador</option>
+            <option value="Soporte">Ayudante</option>
+          </select>
+        <button pButton class="p-button-success">Crear usuario</button>
+      </form>
+    </p-card>
+  </div>

@@ -1,0 +1,25 @@
+<form (ngSubmit)="searchMerchandise()">
+    <div class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input pInputText [(ngModel)]="productName" name="productName" placeholder="Valor de búsqueda"/>
+    </div>
+    <button pButton class="p-button-success">Enviar</button>
+    
+
+      <div  *ngIf="merchandiseData">
+        <p-card [header]= "merchandiseData.productName"  [subheader]="'Fecha de admisión ' + merchandiseData.admissionDate" [style]="{ width: '360px' }">
+          <p>
+            <b>Usuario que Registró: </b> {{merchandiseData.userWhoRegisters}}
+          </p>
+          <ng-template pTemplate="footer">
+            <p-dropdown
+            [options]="users"
+            [(ngModel)]="selectedUser"
+            optionLabel="userName"
+            name="userName"
+            ></p-dropdown>
+            <p-button label="Eliminar" icon="pi pi-check" (click)="deleteMerchandise(merchandiseData.id, selectedUser.id)"></p-button>
+          </ng-template>
+      </p-card>
+      </div>
+  </form>
